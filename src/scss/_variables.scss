@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "NunitoSans";
+  src: url("/assets/fonts/NunitoSans/NunitoSans-Regular.ttf");
+}
+@font-face {
+  font-family: "NunitoSansBold";
+  src: url("/assets/fonts/NunitoSans/NunitoSans-Bold.ttf");
+}
+@font-face {
+  font-family: "NunitoSansItalic";
+  src: url("/assets/fonts/NunitoSans/NunitoSans-Italic.ttf");
+}
+@font-face {
+  font-family: "NunitoSansLight";
+  src: url("/assets/fonts/NunitoSans/NunitoSans-Light.ttf");
+}
+
+$blue: #6062fe;
+$blue-light: #53a7ff;
+$red: #ff7a59;
+$red-light: #f48787;
+$green: #39c2a8;
+$green-light: #fffacd;
+$light-cyan: #ecf9ff;
+$black: #19181f;
+$gray: #5c5c5c;
+$gray-light: #f4f4f3;
+
+$primary-font: "NunitoSans";
+$primary-font-bold: "NunitoSansBold";
+$primary-font-italic: "NunitoSansItalic";
+$primary-font-light: "NunitoSansLight";
