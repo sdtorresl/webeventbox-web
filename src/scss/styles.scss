@@ -9,4 +9,25 @@
 
 body {
   font-family: $primary-font;
+  overflow-x: hidden;
+}
+
+.btn-primary {
+  background-color: $red-light;
+  box-shadow: none;
+  font-family: $primary-font-bold;
+  text-transform: none;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: $red;
+  }
+}
+
+.slick-prev,
+.slick-next {
+  &:before {
+    color: $red;
+    font-size: 2rem;
+  }
 }
