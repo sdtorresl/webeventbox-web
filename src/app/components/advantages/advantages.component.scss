@@ -1,0 +1,22 @@
+@import "variables";
+
+.cyan-light {
+  background: $cyan-light;
+}
+
+.card {
+  margin: 1rem;
+  padding: 1rem;
+
+  .card-title {
+    font-family: $primary-font-bold;
+    padding: 1rem 0;
+    font-size: 1.2 rem;
+  }
+
+  .card-text {
+    color: $gray;
+    line-height: 1.3rem;
+    font-size: 0.95rem;
+  }
+}

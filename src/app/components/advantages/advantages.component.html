@@ -1,0 +1,27 @@
+<section class="cyan-light">
+
+  <div class="container pt-5 pb-5">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+
+      <div ngxSlickItem class="card col-md-4" *ngFor="let item of [0,1,2,3,4,10]">
+        <div class="card-body">
+          <h5 class="card-title">WeBox le ofrece la posibilidad de tener traducción simultánea y lenguaje de señas
+            {{item}}</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the
+            card's content.
+          </p>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the
+            card's content.
+          </p>
+
+          <div class="d-flex justify-content-center mt-4">
+            <button type="button" class="btn btn-primary">Ver referente</button>
+          </div>
+        </div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+
+</section>
