@@ -14,6 +14,10 @@
   font-family: "NunitoSansLight";
   src: url("/assets/fonts/NunitoSans/NunitoSans-Light.ttf");
 }
+@font-face {
+  font-family: "NunitoSansExtraLight";
+  src: url("/assets/fonts/NunitoSans/NunitoSans-ExtraLight.ttf");
+}
 
 $blue: #6062fe;
 $blue-light: #53a7ff;
@@ -31,3 +35,4 @@ $primary-font: "NunitoSans";
 $primary-font-bold: "NunitoSansBold";
 $primary-font-italic: "NunitoSansItalic";
 $primary-font-light: "NunitoSansLight";
+$primary-font-extra-light: "NunitoSansExtraLight";
