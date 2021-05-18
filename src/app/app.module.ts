@@ -8,12 +8,14 @@ import { MdbModule } from 'mdb-angular-ui-kit';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
+import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    AdvantagesComponent
+    AdvantagesComponent,
+    MainmenuComponent
   ],
   imports: [
     BrowserModule,
