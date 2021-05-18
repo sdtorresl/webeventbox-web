@@ -1,0 +1,47 @@
+@import "variables";
+
+.black {
+  background-color: $black;
+}
+.gray {
+  background-color: #{$gray-light + "16"};
+}
+
+a {
+  color: white;
+  font-family: $primary-font-bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#info,
+#social-networks {
+  a,
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+#social-networks-container {
+  max-width: 150px;
+  a {
+    i {
+      color: $red;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+#copyright {
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}
