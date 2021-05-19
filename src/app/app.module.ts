@@ -12,6 +12,7 @@ import { AdvantagesComponent } from './components/advantages/advantages.componen
 import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { IntroComponent } from './components/intro/intro.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { IntroComponent } from './components/intro/intro.component';
     AdvantagesComponent,
     MainmenuComponent,
     ContactComponent,
-    IntroComponent
+    IntroComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
