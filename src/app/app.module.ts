@@ -10,6 +10,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
     FeaturesComponent,
     FooterComponent,
     AdvantagesComponent,
-    MainmenuComponent
+    MainmenuComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
