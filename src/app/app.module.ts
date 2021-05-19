@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { IntroComponent } from './components/intro/intro.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     AdvantagesComponent,
     MainmenuComponent,
     ContactComponent,
+    IntroComponent,
     CarouselComponent
   ],
   imports: [
