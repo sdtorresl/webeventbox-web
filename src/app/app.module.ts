@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { IntroComponent } from './components/intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ContactComponent } from './components/contact/contact.component';
     FooterComponent,
     AdvantagesComponent,
     MainmenuComponent,
-    ContactComponent
+    ContactComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,
