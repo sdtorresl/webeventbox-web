@@ -1,48 +1,44 @@
 <section id="features-wrap" class="container-py text-white">
-    <div class="gradient">
-        <div class="container">
-            <div class="row ">
-                <div class="col col-12 col-md-6 py-md-5 pb-3 d-flex flex-column align-self-center">
-                    <p class="description">Con Web Event Box usted se podrá gestionar sus eventos de manera integral y pensando en la experiencia que vivirán los invitados en cada uno de los momentos:</p>
-                    <ul>
-                        <li>Eventos cerrados y con control de acceso.</li>
-                        <li>Estadísticas de participación de los espectadores en cada momento de conexión.</li>
-                    </ul>
-                </div>
-                <div class="col col-12 col-md-6 py-md-5 pt-3 d-flex flex-column align-self-center text-center">
-                    <p>Pensamos en cada una de las etapas:</p>
-                    <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between">
-                        <div class="item">
-                            <img src="../../../assets/img/feature-1.png" alt="feature-1" class="w-90 mb-3">
-                            <p class="text-uppercase status">Antes</p>
-                            <p class="title">Convocatoria</p>
-                        </div>
-                        <div class="item">
-                            <img src="../../../assets/img/feature-2.png" alt="feature-2" class="w-90 mb-3">
-                            <p class="text-uppercase status">Durante</p>
-                            <p class="title">Evento</p>
-                        </div>
-                        <div class="item">
-                            <img src="../../../assets/img/feature-3.png" alt="feature-3" class="w-90 mb-3">
-                            <p class="text-uppercase status">Despues</p>
-                            <p class="title">Agradecimiento</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="gradient">
+    <div class="container">
+      <div class="row ">
+        <div class="col col-12 col-md-6 py-md-5 pb-3 d-flex flex-column align-self-center">
+          <markdown [data]="featuresData.main_description"></markdown>
         </div>
+        <div class="col col-12 col-md-6 py-md-5 pt-3 d-flex flex-column align-self-center text-center">
+          <p>{{ featuresData.images_title }}</p>
+          <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between">
+            <div class="item" *ngIf="featuresData.stage_1">
+              <img src="../../../assets/img/feature-1.png" alt="feature-1" class="w-90 mb-3">
+              <p class="text-uppercase status">{{ featuresData.stage_1.sub_title }}</p>
+              <p class="title">{{ featuresData.stage_1.title }}</p>
+            </div>
+            <div class="item" *ngIf="featuresData.stage_2">
+              <img src="../../../assets/img/feature-2.png" alt="feature-2" class="w-90 mb-3">
+              <p class="text-uppercase status">{{ featuresData.stage_2.sub_title }}</p>
+              <p class="title">{{ featuresData.stage_2.title }}</p>
+            </div>
+            <div class="item" *ngIf="featuresData.stage_3">
+              <img src="../../../assets/img/feature-3.png" alt="feature-3" class="w-90 mb-3">
+              <p class="text-uppercase status">{{ featuresData.stage_3.sub_title }}</p>
+              <p class="title">{{ featuresData.stage_3.title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<section id="banners-wrap" class="container-py ">
+<section id="banners-wrap" class="container-py">
   <div class="container">
-    <div class="row my-md-5 my-4" *ngFor="let banner of featuresBanner; index as i;">
+    <div class="row my-md-5 my-4" *ngFor="let banner of featuresData.Contenido; index as i;">
       <div class="col col-12 col-md-6 d-flex flex-column align-self-center">
-          <img [src]="banner.imgURL" alt="" class="w-100 my-3">
+        <img [src]="'http://192.168.1.1:1337' + banner.image.url" alt="" class="w-100 my-3">
       </div>
       <div class="col col-12 col-md-6 d-flex flex-column align-self-center" [ngClass]="{'order-md-first': i %2 != 0}">
-          <p>{{ banner.title }}</p>
-          <p>{{ banner.description }}</p>
+
+        <markdown>{{ banner.description }}</markdown>
       </div>
     </div>
   </div>

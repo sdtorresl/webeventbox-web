@@ -10,7 +10,8 @@
 body {
   font-family: $primary-font;
   overflow-x: hidden;
-  background: url('../assets/img/bg-pattern.png') center;
+  background: url("../assets/img/bg-pattern.png") center;
+  background-attachment: fixed;
 }
 
 .btn-primary {

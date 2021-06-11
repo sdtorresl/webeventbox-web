@@ -1,3 +1,5 @@
+import { FeatureService } from './../../services/feature.service';
+import { Feature, FeatureConvert } from './../../models/feature.model';
 import { Component, OnInit } from '@angular/core';
 
 export const featuresBanner = [
@@ -27,11 +29,12 @@ export const featuresBanner = [
   styleUrls: ['./features.component.scss']
 })
 export class FeaturesComponent implements OnInit {
-  featuresBanner =featuresBanner;
+  featuresData: Feature = {};
 
-  constructor() { }
+  constructor(private featureService: FeatureService) { }
 
   ngOnInit(): void {
+    this.featureService.getFeatures().subscribe(resp => this.featuresData = FeatureConvert.toFeature(JSON.stringify(resp)));
   }
 
 }
