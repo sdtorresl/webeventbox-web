@@ -13,6 +13,7 @@ import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     AppRoutingModule,
     MdbModule,
     BrowserAnimationsModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
