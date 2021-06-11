@@ -2,13 +2,13 @@
   <div class="container container pt-5 pb-4">
     <div class="row justify-content-center">
       <div class="col-10 col-md-8 col-lg-7">
-        <p class="text-center">Web Event Box es una herramienta flexible con la que se pueden desarrollar diferentes tipos de eventos en esta Nueva Realidad.</p>
+        <markdown class="text-center" [data]='introData.description'></markdown>
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-8 col-sm-5 col-md-4 col-lg-3 my-2" *ngFor="let item of introItems;">
-          <img [src]="item.imgURL" [alt]="item.title" class="w-100 my-3">
-          <h2 class="text-center"><b>{{ item.title }}</b></h2>
+      <div class="col-8 col-sm-5 col-md-4 col-lg-3 my-2" *ngFor="let item of introData.contenido;">
+        <img [src]="'http://192.168.1.1:1337' + item.image.url" [alt]="item.title" class="w-100 my-3">
+        <h2 class="text-center"><b>{{ item.title }}</b></h2>
       </div>
     </div>
   </div>
