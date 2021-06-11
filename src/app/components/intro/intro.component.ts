@@ -1,8 +1,6 @@
-import { Intro, Contenido, IntroConvert } from './../../models/intro.model';
+import { Intro } from './../../models/intro.model';
 import { IntroService } from './../../services/intro.service';
 import { Component, OnInit } from '@angular/core';
-
-
 
 @Component({
   selector: 'app-intro',
@@ -15,7 +13,7 @@ export class IntroComponent implements OnInit {
   constructor(private introService: IntroService) { }
 
   ngOnInit(): void {
-    this.introService.getIntro().subscribe(resp => this.introData = IntroConvert.toIntro(JSON.stringify(resp)));
+    this.introService.getIntro().subscribe(resp => this.introData = resp);
   }
 
 }

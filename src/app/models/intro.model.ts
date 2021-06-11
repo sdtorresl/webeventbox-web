@@ -54,14 +54,3 @@ export interface Thumbnail {
   path?: null;
   url?: string;
 }
-
-// Converts JSON strings to/from your types
-export class IntroConvert {
-  public static toIntro(json: string): Intro {
-    return JSON.parse(json);
-  }
-
-  public static introToJson(value: Intro): string {
-    return JSON.stringify(value);
-  }
-}

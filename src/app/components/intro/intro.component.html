@@ -7,7 +7,7 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-8 col-sm-5 col-md-4 col-lg-3 my-2" *ngFor="let item of introData.contenido;">
-        <img [src]="'http://192.168.1.1:1337' + item.image.url" [alt]="item.title" class="w-100 my-3">
+        <img [src]="item.image.url" [alt]="item.title" class="w-100 my-3">
         <h2 class="text-center"><b>{{ item.title }}</b></h2>
       </div>
     </div>
