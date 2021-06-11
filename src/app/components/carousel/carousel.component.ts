@@ -1,3 +1,4 @@
+import { Convert, Carousel } from './../../models/carousel.model';
 import { CarouselService } from '../../services/carousel.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,13 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
+  carouselData: Carousel = {
+    id: 0,
+    created_at: new Date(),
+    updated_at: new Date(),
+    slider_content: []
+  }
+
+
   constructor(private carousel: CarouselService) { }
 
   ngOnInit(): void {
     this.carousel.getSliders()
-      .subscribe( resp=> {
-        console.log(resp);
-      });
+      .subscribe( (resp) => {
+        console.log(JSON.stringify(resp));
+        this.carouselData = Convert.toCarousel(JSON.stringify(resp));
+      }
+     );
   }
 
 }
