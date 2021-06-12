@@ -26,6 +26,13 @@ body {
   }
 }
 
+.text-blue {
+  color: $blue !important;
+}
+.text-red {
+  color: $red !important;
+}
+
 .slick-prev,
 .slick-next {
   &:before {

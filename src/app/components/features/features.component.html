@@ -1,45 +1,64 @@
 <section id="features-wrap" class="container-py text-white">
   <div class="gradient">
     <div class="container">
-      <div class="row ">
-        <div class="col col-12 col-md-6 py-md-5 pb-3 d-flex flex-column align-self-center">
-          <markdown [data]="featuresData.main_description"></markdown>
+
+      <ng-container *ngIf="featuresData === undefined; else description">
+        <div class="row justify-content-center mt-5 mb-5">
+          <div class="spinner-border text-white" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
         </div>
-        <div class="col col-12 col-md-6 py-md-5 pt-3 d-flex flex-column align-self-center text-center">
-          <p>{{ featuresData.images_title }}</p>
-          <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between">
-            <div class="item" *ngIf="featuresData.stage_1">
-              <img src="../../../assets/img/feature-1.png" alt="feature-1" class="w-90 mb-3">
-              <p class="text-uppercase status">{{ featuresData.stage_1.sub_title }}</p>
-              <p class="title">{{ featuresData.stage_1.title }}</p>
-            </div>
-            <div class="item" *ngIf="featuresData.stage_2">
-              <img src="../../../assets/img/feature-2.png" alt="feature-2" class="w-90 mb-3">
-              <p class="text-uppercase status">{{ featuresData.stage_2.sub_title }}</p>
-              <p class="title">{{ featuresData.stage_2.title }}</p>
-            </div>
-            <div class="item" *ngIf="featuresData.stage_3">
-              <img src="../../../assets/img/feature-3.png" alt="feature-3" class="w-90 mb-3">
-              <p class="text-uppercase status">{{ featuresData.stage_3.sub_title }}</p>
-              <p class="title">{{ featuresData.stage_3.title }}</p>
+      </ng-container>
+      <ng-template #description>
+        <div class="row" #description>
+          <div class="col col-12 col-md-6 py-md-5 pb-3 d-flex flex-column align-self-center">
+            <markdown [data]="featuresData?.main_description"></markdown>
+          </div>
+          <div class="col col-12 col-md-6 py-md-5 pt-3 d-flex flex-column align-self-center text-center">
+            <p>{{ featuresData?.images_title }}</p>
+            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between">
+              <div class="item" *ngIf="featuresData?.stage_1">
+                <img src="../../../assets/img/feature-1.png" alt="feature-1" class="w-90 mb-3">
+                <p class="text-uppercase status">{{ featuresData?.stage_1?.sub_title }}</p>
+                <p class="title">{{ featuresData?.stage_1?.title }}</p>
+              </div>
+              <div class="item" *ngIf="featuresData?.stage_2">
+                <img src="../../../assets/img/feature-2.png" alt="feature-2" class="w-90 mb-3">
+                <p class="text-uppercase status">{{ featuresData?.stage_2?.sub_title }}</p>
+                <p class="title">{{ featuresData?.stage_2?.title }}</p>
+              </div>
+              <div class="item" *ngIf="featuresData?.stage_3">
+                <img src="../../../assets/img/feature-3.png" alt="feature-3" class="w-90 mb-3">
+                <p class="text-uppercase status">{{ featuresData?.stage_3?.sub_title }}</p>
+                <p class="title">{{ featuresData?.stage_3?.title }}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </ng-template>
     </div>
   </div>
 </section>
 
 <section id="banners-wrap" class="container-py">
   <div class="container">
-    <div class="row my-md-5 my-4" *ngFor="let banner of featuresData.Contenido; index as i;">
-      <div class="col col-12 col-md-6 d-flex flex-column align-self-center">
-        <img [src]="'http://192.168.1.1:1337' + banner.image.url" alt="" class="w-100 my-3">
+    <ng-container *ngIf="featuresData === undefined; else content">
+      <div class="row justify-content-center mt-5 mb-5">
+        <div class="spinner-border text-red" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
       </div>
-      <div class="col col-12 col-md-6 d-flex flex-column align-self-center" [ngClass]="{'order-md-first': i %2 != 0}">
+    </ng-container>
+    <ng-template #content>
+      <div class="row my-md-5 my-4" *ngFor="let banner of featuresData?.Contenido; index as i;">
+        <div class="col col-12 col-md-6 d-flex flex-column align-self-center">
+          <img [src]="'http://192.168.1.1:1337' + banner.image.url" alt="" class="w-100 my-3">
+        </div>
+        <div class="col col-12 col-md-6 d-flex flex-column align-self-center" [ngClass]="{'order-md-first': i %2 != 0}">
 
-        <markdown>{{ banner.description }}</markdown>
+          <markdown>{{ banner.description }}</markdown>
+        </div>
       </div>
-    </div>
+    </ng-template>
   </div>
 </section>

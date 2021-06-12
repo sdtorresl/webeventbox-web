@@ -1,27 +1,7 @@
 import { FeatureService } from './../../services/feature.service';
-import { Feature, FeatureConvert } from './../../models/feature.model';
+import { Feature } from './../../models/feature.model';
 import { Component, OnInit } from '@angular/core';
 
-export const featuresBanner = [
-  {
-    id: 1,
-    title: 'El Botón de Transmisión de WeBox le ofrece la mejor experiencia virtual a todos sus invitados.',
-    description: 'Diseñada para que los contenidos tomen una verdadera relevancia y con la posibilidad de ser personalizados para su marca y sus aliados.',
-    imgURL: 'https://dummyimage.com/600x300/cccccc/000000',
-  },
-  {
-    id: 2,
-    title: 'El Botón de Transmisión de WeBox le ofrece la mejor experiencia virtual a todos sus invitados.',
-    description: 'Diseñada para que los contenidos tomen una verdadera relevancia y con la posibilidad de ser personalizados para su marca y sus aliados.',
-    imgURL: 'https://dummyimage.com/600x300/cccccc/000000',
-  },
-  {
-    id: 3,
-    title: 'El Botón de Transmisión de WeBox le ofrece la mejor experiencia virtual a todos sus invitados.',
-    description: 'Diseñada para que los contenidos tomen una verdadera relevancia y con la posibilidad de ser personalizados para su marca y sus aliados.',
-    imgURL: 'https://dummyimage.com/600x300/cccccc/000000',
-  }
-];
 
 @Component({
   selector: 'app-features',
@@ -29,12 +9,12 @@ export const featuresBanner = [
   styleUrls: ['./features.component.scss']
 })
 export class FeaturesComponent implements OnInit {
-  featuresData: Feature = {};
+  featuresData?: Feature;
 
   constructor(private featureService: FeatureService) { }
 
   ngOnInit(): void {
-    this.featureService.getFeatures().subscribe(resp => this.featuresData = FeatureConvert.toFeature(JSON.stringify(resp)));
+    this.featureService.getFeatures().subscribe(resp => this.featuresData = resp);
   }
 
 }

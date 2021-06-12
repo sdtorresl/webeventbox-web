@@ -1,6 +1,8 @@
+import { Feature } from './../models/feature.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { config } from '../config/config';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,13 @@ export class FeatureService {
   constructor(private http: HttpClient) { }
 
   getFeatures() {
-    const endpoint = 'http://192.168.1.1:1337/caracteristica';
-    return this.http.get(endpoint);
+    const endpoint = config.baseUrl + '/caracteristica';
+    return this.http.get<Feature>(endpoint).pipe(map(resp => {
+      resp.stage_1.image.url === config.baseUrl + resp.stage_1.image.url;
+      resp.stage_2.image.url === config.baseUrl + resp.stage_2.image.url;
+      resp.stage_3.image.url === config.baseUrl + resp.stage_3.image.url;
+
+      return resp;
+    }));
   }
 }
