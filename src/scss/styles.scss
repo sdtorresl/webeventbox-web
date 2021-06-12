@@ -14,15 +14,41 @@ body {
   background-attachment: fixed;
 }
 
-.btn-primary {
-  background-color: $red-light;
+.btn-primary,
+.btn-secondary {
   box-shadow: none;
   font-family: $primary-font-bold;
   text-transform: none;
   font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: $red-light;
 
   &:hover {
     background-color: $red;
+  }
+
+  &:active,
+  &:visited,
+  &:focus,
+  &:checked {
+    background-color: $blue;
+  }
+}
+
+.btn-secondary {
+  background-color: $blue;
+
+  &:hover {
+    background-color: $blue;
+  }
+
+  &:active,
+  &:visited,
+  &:focus,
+  &:checked {
+    background-color: $blue-light;
   }
 }
 

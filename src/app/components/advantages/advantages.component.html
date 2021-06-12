@@ -1,23 +1,17 @@
 <section class="cyan-light">
 
-  <div class="container pt-5 pb-5">
+  <div class="container pt-5 pb-5 d-flex align-items-stretch">
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
 
-      <div ngxSlickItem class="card col-md-4" *ngFor="let item of [0,1,2,3,4,10]">
+      <div ngxSlickItem class="card col-md-4" *ngFor="let item of advantagesData?.Contenido">
         <div class="card-body">
-          <h5 class="card-title">WeBox le ofrece la posibilidad de tener traducción simultánea y lenguaje de señas
-            {{item}}</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the
-            card's content.
-          </p>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the
-            card's content.
-          </p>
+          <h5 class="card-title">{{ item.title }}</h5>
+          <markdown class="card-text" [data]="item.description"></markdown>
 
           <div class="d-flex justify-content-center mt-4">
-            <button type="button" class="btn btn-primary">Ver referente</button>
+            <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
+              [attr.data-mdb-target]="'#modal' + item.id">Ver
+              referente</button>
           </div>
         </div>
       </div>
@@ -25,3 +19,26 @@
   </div>
 
 </section>
+
+<!-- Modal -->
+<div class="modal fade" [id]="'modal' + item.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  *ngFor="let item of advantagesData?.Contenido">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ item.title }}</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <figure>
+          <img [src]="item.modal_image?.url" [alt]="item.modal_image?.alternativeText">
+        </figure>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

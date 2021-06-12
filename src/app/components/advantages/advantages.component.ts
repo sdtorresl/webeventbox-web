@@ -1,3 +1,5 @@
+import { AdvantageService } from './../../services/advantage.service';
+import { Advantage } from './../../models/advantge.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdvantagesComponent implements OnInit {
 
   slideConfig = {
-    slidesToShow: 4, slidesToScroll: 4, infinity: false,
+    slidesToShow: 3, slidesToScroll: 3, infinity: false,
     responsive: [
       {
         breakpoint: 1200,
@@ -36,9 +38,15 @@ export class AdvantagesComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  advantagesData?: Advantage;
+
+  constructor(private advantageService: AdvantageService) { }
 
   ngOnInit(): void {
+    this.advantageService.getAdvantages().subscribe(resp => {
+      console.log(resp);
+      this.advantagesData = resp;
+    })
   }
 
 }
