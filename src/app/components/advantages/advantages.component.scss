@@ -8,6 +8,14 @@
   margin: 1rem;
   padding: 1rem;
 
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 500px;
+  }
+
   .card-title {
     font-family: $primary-font-bold;
     padding: 1rem 0;

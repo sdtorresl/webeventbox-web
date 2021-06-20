@@ -4,8 +4,18 @@
   padding: 70px 0;
 }
 
+#banners-wrap {
+  p,
+  ul,
+  markdown {
+    font-size: 1.2rem;
+    background: white;
+  }
+}
+
 p,
-ul {
+ul,
+markdown {
   font-size: 1.2rem;
 }
 
@@ -41,8 +51,6 @@ ul {
     }
   }
 }
-
-
 
 /*
 ul {

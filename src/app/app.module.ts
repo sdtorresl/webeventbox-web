@@ -13,8 +13,9 @@ import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MarkdownModule.forRoot({ loader: HttpClient }),
   ],
   providers: [],
   bootstrap: [AppComponent]
