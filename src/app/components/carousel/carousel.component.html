@@ -13,68 +13,11 @@
   <!-- Inner -->
   <div class="carousel-inner">
     <!-- Single item -->
-    <div class="carousel-item active blue-bg">
-      <div class="d-flex justify-content-center align-items-center">
-        <div id="left-text">
-          <p>Pensando en</p>
-          <b>nuestra</b>
-          <p>realidad</p>
-        </div>
+    <div >
+      <div class="carousel-item blue-bg" *ngFor="let carousel of carouselData.slider_content; index as i" [ngClass]="{'active': i == 0}">
+        <img class="w-100" [src]="'http://192.168.1.1:1337' + carousel.desktop.url" alt="">
+        <p>{{ carousel.desktop.url }}</p>
 
-        <img src="assets/img/carousel-1.png" class="h-100" alt="..." />
-
-        <div id="right-text">
-          <p>Tenemos</p>
-          <b>una idea</b>
-          <p>para sus eventos</p>
-        </div>
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-        <p class="highlight">#EventosOnline</p>
-      </div>
-    </div>
-
-    <!-- Single item -->
-    <div class="carousel-item yellow-bg">
-      <div class="d-flex justify-content-center">
-        <img src="assets/img/carousel-1.png" class="h-100" alt="..." />
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-        <p>A partir de la idea de su evento, con Web Event Box lo llevamos a un entorno digital.</p>
-        <p class="highlight">#EventosOnline</p>>
-      </div>
-    </div>
-
-    <!-- Single item -->
-    <div class="carousel-item green-bg">
-      <div class="d-flex justify-content-center">
-        <img src="assets/img/carousel-1.png" class="h-100" alt="..." />
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-        <p>A partir de la idea de su evento, con Web Event Box lo llevamos a un entorno digital.</p>
-        <p class="highlight">#EventosOnline</p>
-      </div>
-    </div>
-
-    <!-- Single item -->
-    <div class="carousel-item red-bg">
-      <div class="d-flex justify-content-center">
-        <img src="assets/img/carousel-1.png" class="h-100" alt="..." />
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-        <p>A partir de la idea de su evento, con Web Event Box lo llevamos a un entorno digital.</p>
-        <p class="highlight">#EventosOnline</p>
-      </div>
-    </div>
-
-    <!-- Single item -->
-    <div class="carousel-item purple-bg">
-      <div class="d-flex justify-content-center">
-        <img src="assets/img/carousel-1.png" class="h-100" alt="..." />
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-        <p>A partir de la idea de su evento, con Web Event Box lo llevamos a un entorno digital.</p>
-        <p class="highlight">#EventosOnline</p>
       </div>
     </div>
   </div>
