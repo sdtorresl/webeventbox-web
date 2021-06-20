@@ -1,5 +1,6 @@
+import { ContactUsService } from './../../services/contact-us.service';
 import { Component, OnInit } from '@angular/core';
-import { EmailValidator, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +11,7 @@ export class ContactComponent implements OnInit {
 
   contactForm?: FormGroup;
 
-  constructor( private fb: FormBuilder) {
+  constructor( private fb: FormBuilder, private contactUsService: ContactUsService ) {
     this.buildForm();
   }
 
@@ -28,13 +29,18 @@ export class ContactComponent implements OnInit {
   }
 
   validateForm() {
-    console.log(this.contactForm);
+    console.log(this.contactForm?.value);
 
     if (this.contactForm?.invalid) {
       return Object.values(this.contactForm.controls).forEach(control => {
         control.markAllAsTouched();
       });
     }
+
+    this.contactUsService.saveContact( this.contactForm?.value )
+      .subscribe( resp => {
+        console.log(resp);
+      });
   }
 
   get invalidComment() {
