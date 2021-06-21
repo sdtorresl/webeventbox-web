@@ -1,34 +1,28 @@
 <!-- Carousel wrapper -->
-<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+<div id="carousel-home" class="carousel slide carousel-fade" data-mdb-ride="carousel">
   <!-- Indicators -->
   <div class="carousel-indicators">
-    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"
-      aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="3" aria-label="Slide 4"></button>
-    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-mdb-target="#carousel-home" *ngFor="let carousel of carouselData.slider_content; index as i" [ngClass]="{'active': i == 0}" [attr.aria-current]="i == 0 ? 'true' : null" [attr.data-mdb-slide-to]="i" [attr.aria-label]="'Slide ' + i"></button>
   </div>
 
   <!-- Inner -->
   <div class="carousel-inner">
     <!-- Single item -->
     <div >
-      <div class="carousel-item blue-bg" *ngFor="let carousel of carouselData.slider_content; index as i" [ngClass]="{'active': i == 0}">
-        <img class="w-100" [src]="'http://192.168.1.1:1337' + carousel.desktop.url" alt="">
-        <p>{{ carousel.desktop.url }}</p>
-
+      <div class="carousel-item" *ngFor="let carousel of carouselData.slider_content; index as i" [ngClass]="{'active': i == 0}">
+        <img id="img-desktop" class="w-100" [src]="carousel.desktop.url" alt="">
+        <img id="img-mobile" class="w-100" [src]="carousel.mobile.url" alt="">
       </div>
     </div>
   </div>
   <!-- Inner -->
 
-  <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+  <!-- Control arrows -->
+  <button class="carousel-control-prev" type="button" data-mdb-target="#carousel-home" data-mdb-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
+  <button class="carousel-control-next" type="button" data-mdb-target="#carousel-home" data-mdb-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>

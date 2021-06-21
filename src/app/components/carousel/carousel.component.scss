@@ -1,74 +1,17 @@
 @import "variables";
 
-.blue-bg {
-  background: linear-gradient(135deg, #53a7ff 0%, #6062fe 100%);
-}
-.red-bg {
-  background: linear-gradient(135deg, #ff7a59 0%, #f77b78 100%);
-}
-.green-bg {
-  background: linear-gradient(135deg, #3fc0a7 0%, #a4f0e3 100%);
-}
-.yellow-bg {
-  background: linear-gradient(135deg, #e8ff75 0%, #f8ff76 100%);
-}
-.purple-bg {
-  background: linear-gradient(135deg, #6062fe 0%, #5f61b3 100%);
-}
+#img-desktop {
+  display: none;
 
-.highlight {
-  font-family: $primary-font-bold;
-  font-size: 1.2rem;
-  background: white;
-  color: #6062fe;
-  padding: 0.5rem 1.5rem;
-  border-radius: 2rem;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-.carousel-caption {
-  p {
-    font-family: $primary-font-bold;
-    font-size: 1.2rem;
-    text-shadow: hoff voff blur #000;
+  @media (min-width: 768px) {
+    display: inline;
   }
 }
 
-#right-text,
-#left-text {
-  font-family: $primary-font-bold;
-  font-size: 1.8rem;
-  color: white;
-  p {
-    margin: 0;
-    line-height: 1.8rem;
-  }
+#img-mobile {
+  display: none;
 
-  b {
-    font-size: 3.5rem;
-    line-height: 3rem;
+  @media (max-width: 767px) {
+    display: inline;
   }
-}
-#left-text {
-  text-align: right;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: revert;
-  justify-content: center;
-  flex-direction: column;
-  left: 15%;
-}
-#right-text {
-  text-align: left;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: revert;
-  justify-content: center;
-  flex-direction: column;
-  right: 15%;
 }
