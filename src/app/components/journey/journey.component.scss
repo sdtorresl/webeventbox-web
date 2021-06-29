@@ -1,0 +1,61 @@
+#journey{
+  color: #ffffff;
+  background-color: #39C2A8;
+
+  #items-wrap{
+    overflow-x: scroll;
+
+  }
+  .item{
+    min-width: 150px;
+  }
+}
+
+.line {
+  min-width: 60px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 40%;
+    right: -5px;
+    left: -5px;
+    border: 1px #ffffff solid;
+  }
+}
+
+
+.custom-slider-main{
+  display: flex;
+  //justify-content: center;
+  //justify-content: flex-start;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.info-box{
+  width: 50px;
+  min-height:50px;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  cursor: pointer;
+}
+
+.pull-left {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  z-index: 100;
+}
+
+.pull-right {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  z-index: 100;
+}

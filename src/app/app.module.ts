@@ -16,6 +16,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
+import { JourneyComponent } from './components/journey/journey.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MarkdownModule } from 'ngx-markdown';
     MainmenuComponent,
     ContactComponent,
     IntroComponent,
-    CarouselComponent
+    CarouselComponent,
+    JourneyComponent
   ],
   imports: [
     BrowserModule,
