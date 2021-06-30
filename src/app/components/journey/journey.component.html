@@ -3,7 +3,7 @@
     <h2 class="title text-center font-weight-bold mb-5">Journey del usuario en <br>Web Event Box</h2>
     <div id="slider-wrapper" class="position-relative">
       <div class="pull-left mt-sm">
-        <div class="arrow" (click)="scrollLeft()">
+        <div #leftArrow class="arrow" [class.active]='leftActive' (click)="scrollLeft()">
           <i class="fas fa-chevron-left"></i>
         </div>
       </div>
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="pull-right mt-sm">
-        <div class="arrow" (click)="scrollRight()">
+        <div #rightArrow class="arrow" [class.active]='rightActive' (click)="scrollRight()">
           <i class="fas fa-chevron-right"></i>
         </div>
       </div>

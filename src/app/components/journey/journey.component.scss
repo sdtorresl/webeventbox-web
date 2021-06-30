@@ -40,7 +40,12 @@
 
 .arrow {
   font-size: 2rem;
-  cursor: pointer;
+  color: #ccc;
+
+  &.active {
+    color: white;
+    cursor: pointer;
+  }
 }
 
 .pull-left {
