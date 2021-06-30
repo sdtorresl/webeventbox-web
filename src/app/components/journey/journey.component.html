@@ -1,9 +1,11 @@
 <section id="journey" class=" pt-5 pb-5">
   <div class="container pb-4 pt-5">
     <h2 class="title text-center font-weight-bold mb-5">Journey del usuario en <br>Web Event Box</h2>
-    <div class="position-relative">
+    <div id="slider-wrapper" class="position-relative">
       <div class="pull-left mt-sm">
-        <div class="arrow" (click)="scrollLeft()"></div>
+        <div class="arrow" (click)="scrollLeft()">
+          <i class="fas fa-chevron-left"></i>
+        </div>
       </div>
       <div #widgetsContent class="custom-slider-main position-relative">
         <div class="item d-flex flex-column align-items-center">
@@ -37,10 +39,13 @@
         </div>
       </div>
       <div class="pull-right mt-sm">
-        <div class="arrow" (click)="scrollRight()"></div>
+        <div class="arrow" (click)="scrollRight()">
+          <i class="fas fa-chevron-right"></i>
+        </div>
       </div>
     </div>
-    <p class="text-center font-weight-bold mt-4">Valor agregado: Estadísticas del evento y de la conexión durante el desarrollo del evento.</p>
+    <p class="text-center font-weight-bold mt-4">Valor agregado: Estadísticas del evento y de la conexión durante el
+      desarrollo del evento.</p>
   </div>
 
 
@@ -48,4 +53,3 @@
 
 
 </section>
-

@@ -1,12 +1,11 @@
-#journey{
+#journey {
   color: #ffffff;
-  background-color: #39C2A8;
+  background-color: #39c2a8;
 
-  #items-wrap{
+  #items-wrap {
     overflow-x: scroll;
-
   }
-  .item{
+  .item {
     min-width: 150px;
   }
 }
@@ -25,24 +24,22 @@
   }
 }
 
-
-.custom-slider-main{
+#slider-wrapper {
+  padding: 0 2.5rem;
+}
+.custom-slider-main {
   display: flex;
-  //justify-content: center;
-  //justify-content: flex-start;
   overflow: hidden;
   scroll-behavior: smooth;
 }
 
-.info-box{
+.info-box {
   width: 50px;
-  min-height:50px;
+  min-height: 50px;
 }
 
 .arrow {
-  width: 40px;
-  height: 40px;
-  background-color: red;
+  font-size: 2rem;
   cursor: pointer;
 }
 
