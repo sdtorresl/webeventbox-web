@@ -14,9 +14,13 @@ export class FeatureService {
   getFeatures() {
     const endpoint = config.baseUrl + '/caracteristica';
     return this.http.get<Feature>(endpoint).pipe(map(resp => {
-      resp.stage_1.image.url === config.baseUrl + resp.stage_1.image.url;
-      resp.stage_2.image.url === config.baseUrl + resp.stage_2.image.url;
-      resp.stage_3.image.url === config.baseUrl + resp.stage_3.image.url;
+      resp.stage_1.image.url = config.baseUrl + resp.stage_1.image.url;
+      resp.stage_2.image.url = config.baseUrl + resp.stage_2.image.url;
+      resp.stage_3.image.url = config.baseUrl + resp.stage_3.image.url;
+
+      resp.Contenido?.forEach(content => {
+        content.image.url = config.baseUrl + content.image.url;
+      });
 
       return resp;
     }));

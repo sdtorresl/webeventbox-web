@@ -17,17 +17,17 @@
             <p>{{ featuresData?.images_title }}</p>
             <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between">
               <div class="item" *ngIf="featuresData?.stage_1">
-                <img src="../../../assets/img/feature-1.png" alt="feature-1" class="w-90 mb-3">
+                <img [src]="featuresData?.stage_1?.image?.url" alt="feature-1" class="w-90 mb-3">
                 <p class="text-uppercase status">{{ featuresData?.stage_1?.sub_title }}</p>
                 <p class="title">{{ featuresData?.stage_1?.title }}</p>
               </div>
               <div class="item" *ngIf="featuresData?.stage_2">
-                <img src="../../../assets/img/feature-2.png" alt="feature-2" class="w-90 mb-3">
+                <img [src]="featuresData?.stage_2?.image?.url" alt="feature-2" class="w-90 mb-3">
                 <p class="text-uppercase status">{{ featuresData?.stage_2?.sub_title }}</p>
                 <p class="title">{{ featuresData?.stage_2?.title }}</p>
               </div>
               <div class="item" *ngIf="featuresData?.stage_3">
-                <img src="../../../assets/img/feature-3.png" alt="feature-3" class="w-90 mb-3">
+                <img [src]="featuresData?.stage_3?.image?.url" alt="feature-3" class="w-90 mb-3">
                 <p class="text-uppercase status">{{ featuresData?.stage_3?.sub_title }}</p>
                 <p class="title">{{ featuresData?.stage_3?.title }}</p>
               </div>
@@ -51,7 +51,7 @@
     <ng-template #content>
       <div class="row my-md-5 my-4" *ngFor="let banner of featuresData?.Contenido; index as i;">
         <div class="col col-12 col-md-6 d-flex flex-column align-self-center">
-          <img [src]="'http://192.168.1.1:1337' + banner.image.url" alt="" class="w-100 my-3">
+          <img [src]="banner.image.url" alt="" class="w-100 my-3">
         </div>
         <div class="col col-12 col-md-6 d-flex flex-column align-self-center" [ngClass]="{'order-md-first': i %2 != 0}">
 
