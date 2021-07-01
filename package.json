@@ -23,10 +23,12 @@
     "@fortawesome/fontawesome-free": "^5.15.1",
     "jquery": "^3.6.0",
     "mdb-angular-ui-kit": "^1.0.0-beta4",
+    "ng-recaptcha": "^8.0.0",
     "ngx-markdown": "^12.0.1",
     "ngx-slick-carousel": "^0.5.1",
     "rxjs": "~6.6.0",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.0.18",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

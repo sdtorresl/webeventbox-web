@@ -6,43 +6,46 @@
     <div class="row mt-4 mb-2">
       <div class="col-md-12 mb-2">
         <div class="form-outline mb-4">
-          <textarea type="text" id="form3Example1" class="form-control" rows="4" formControlName="comment" [class.invalid]="invalidComment"></textarea>
-          <label class="form-label" for="form3Example1">Tu idea</label>
-          <small *ngIf="invalidComment" class="text-danger">Escribe tu idea, la logitud debe ser de mínimo 8 caracteres.</small>
+          <textarea type="text" id="message" class="form-control" rows="4" formControlName="comment"
+            [class.invalid]="invalidComment"></textarea>
+          <label class="form-label" for="message">Tu idea</label>
+          <small *ngIf="invalidComment" class="text-danger">Escribe tu idea, la logitud debe ser de mínimo 8
+            caracteres.</small>
         </div>
       </div>
       <div class="col-md-6 mb-2">
         <div class="form-outline mb-4">
-          <input type="text" id="form4Example1" class="form-control" formControlName="name" [class.invalid]="invalidName"/>
-          <label class="form-label" for="form4Example1">Nombre</label>
+          <input type="text" id="name" class="form-control" formControlName="name" [class.invalid]="invalidName" />
+          <label class="form-label" for="name">Nombre</label>
           <small *ngIf="invalidName" class="text-danger">Ingresa tu nombre completo</small>
         </div>
       </div>
       <div class="col-md-6 mb-2">
         <div class="form-outline mb-4">
-          <input type="text" id="form4Example1" class="form-control" formControlName="email" [class.invalid]="invalidEmail"/>
-          <label class="form-label" for="form4Example1">Correo</label>
+          <input type="text" id="email" class="form-control" formControlName="email" [class.invalid]="invalidEmail" />
+          <label class="form-label" for="email">Correo</label>
           <small *ngIf="invalidEmail" class="text-danger">Ingresa un correo válido</small>
         </div>
       </div>
       <div class="col-md-6 mb-2">
         <div class="form-outline mb-4">
-          <input type="text" id="form4Example1" class="form-control" formControlName="phone" [class.invalid]="invalidPhone"/>
-          <label class="form-label" for="form4Example1">Teléfono</label>
+          <input type="text" id="phone" class="form-control" formControlName="phone" [class.invalid]="invalidPhone" />
+          <label class="form-label" for="phone">Teléfono</label>
           <small *ngIf="invalidPhone" class="text-danger">Ingresa un teléfono válido</small>
         </div>
       </div>
       <div class="col-md-6 mb-2">
         <div class="form-outline mb-4">
-          <input type="text" id="form4Example1" class="form-control" formControlName="company" [class.invalid]="invalidCompany"/>
-          <label class="form-label" for="form4Example1">Empresa</label>
+          <input type="text" id="company" class="form-control" formControlName="company"
+            [class.invalid]="invalidCompany" />
+          <label class="form-label" for="company">Empresa</label>
           <small *ngIf="invalidCompany" class="text-danger">Ingresa el nombre de tu empresa</small>
         </div>
       </div>
     </div>
 
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button [disabled]="!contactForm.valid" type="submit" class="btn btn-primary">Enviar</button>
     </div>
   </form>
 </section>
