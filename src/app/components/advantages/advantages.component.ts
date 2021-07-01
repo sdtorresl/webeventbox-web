@@ -10,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class AdvantagesComponent implements OnInit {
 
   slideConfig = {
-    slidesToShow: 3, slidesToScroll: 3, infinity: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    infinity: false,
+    //autoplay: true,
+    adaptiveHeight: true,
+    dots: true,
     responsive: [
       {
         breakpoint: 1200,
@@ -18,21 +23,23 @@ export class AdvantagesComponent implements OnInit {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
         }
       },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 2,
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 800,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          arrows: false,
+          centerMode: true,
+          centerPadding: '20px',
         }
       }
     ]

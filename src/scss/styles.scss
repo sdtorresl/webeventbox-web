@@ -61,10 +61,17 @@ body {
 
 .slick-prev,
 .slick-next {
+  height: 30px;
+  width: 30px;
+
   &:before {
     color: $red;
     font-size: 2rem;
   }
+}
+
+.slick-dots li.slick-active button::before {
+  color: $red;
 }
 
 .form-outline {
