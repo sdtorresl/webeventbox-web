@@ -1,10 +1,9 @@
 <footer class="black text-white">
-  <section class="">
+  <section class="container-fluid">
     <div class="row">
       <div class="col-md-4 p-5 d-flex justify-content-end align-items-center">
         <p>
           Powered by
-
           <a href="https://exeamedia.com" target="_blank">
             <img src="assets/img/logo-exea.png" alt="">
           </a>
@@ -21,15 +20,13 @@
           <div id="info" class="col-md-9">
             <p>Exea Media SAS - Calle 150 #21A-14 Piso 3</p>
             <p>Bogotá Tel: (+571) 743-2481 Ext 104</p>
-            <a href="mailto:info@exeamedia.com" target="_blank">info@exeamedia.com</a>
           </div>
           <div id="social-networks" class="col-md-3">
             <p>Síguenos en:</p>
-            <div id="social-networks-container" class="d-flex justify-content-between">
-              <a href="https://google.com" target="_blank"><i class="fab fa-google"></i></a>
-              <a href="https://google.com" target="_blank"><i class="fab fa-facebook"></i></a>
-              <a href="https://google.com" target="_blank"><i class="fab fa-twitter"></i></a>
-              <a href="https://google.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <div id="social-networks-container" class="d-flex justify-content-start">
+              <a href="https://www.facebook.com/Exea-Media-191962690882567/" target="_blank"><i
+                  class="fab fa-facebook"></i></a>
+              <a href="https://twitter.com/exeamedia" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
           </div>
         </div>
@@ -38,9 +35,54 @@
     </div>
 
     <div id="copyright" class="row" class="text-center p-5">
-      <p>Usar este sitio implica que usted acepta nuestros Términos y condiciones y Políticas de privacidad.</p>
-      <p>Copyright 2021 - <a href="https://exeamedia.com" target="_blank">Exea Media</a> todos los derechos resevados.
+      <p>Usar este sitio implica que usted acepta nuestros <a data-mdb-toggle="modal"
+          data-mdb-target="#terms-and-conditions-modal">Términos y Condiciones</a> y <a data-mdb-toggle="modal"
+          data-mdb-target="#privacy-policy-modal">Políticas de privacidad</a>.
+      </p>
+      <p>Copyright {{ date }} - <a href="https://exeamedia.com" target="_blank">Exea Media</a> todos los derechos
+        resevados.
       </p>
     </div>
   </section>
+
+  <div class="modal text-black fade" id="terms-and-conditions-modal" tabindex="-1"
+    aria-labelledby="terms-and-conditions" aria-hidden="true" *ngIf="termsData">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="terms-and-conditions">{{ termsData.title }}</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>{{ termsData.description }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
+            Aceptar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal text-black fade" id="privacy-policy-modal" tabindex="-1" aria-labelledby="privacy-policy"
+    aria-hidden="true" *ngIf="policyData">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacy-policy">{{ policyData.title }}</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>{{ policyData.description }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
+            Aceptar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </footer>

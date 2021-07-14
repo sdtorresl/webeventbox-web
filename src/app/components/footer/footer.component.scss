@@ -1,4 +1,5 @@
 @import "variables";
+@import "../../../../node_modules/mdb-angular-ui-kit/assets/scss/bootstrap/bootstrap-utilities.scss";
 
 .black {
   background-color: $black;
@@ -32,6 +33,7 @@ a {
 #social-networks-container {
   max-width: 150px;
   a {
+    margin-right: 1rem;
     i {
       color: $red;
       font-size: 1.4rem;
@@ -40,8 +42,22 @@ a {
 }
 
 #copyright {
-  p {
+  p,
+  a {
     margin: 0;
     font-size: 0.9rem;
+  }
+
+  a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.modal {
+  .modal-dialog {
+    @include media-breakpoint-up(md) {
+      max-width: 40%;
+    }
   }
 }
