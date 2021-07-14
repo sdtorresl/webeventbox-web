@@ -12,5 +12,5 @@ export interface Content {
   id: number;
   description: string;
   title: string;
-  modal_image?: Image;
+  modal_image?: Image[];
 }

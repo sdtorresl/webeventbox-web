@@ -15,7 +15,10 @@ export class AdvantageService {
     const endpoint = config.baseUrl + '/ventajas'
     return this.http.get<Advantage>(endpoint).pipe(map(resp => {
       resp.Contenido.forEach((content) => {
-        if (content.modal_image) content.modal_image.url = config.baseUrl + content.modal_image?.url;
+
+        if (content.modal_image) {
+          content.modal_image.forEach((image) => image.url = config.baseUrl + image.url);
+        }
       })
 
       return resp;

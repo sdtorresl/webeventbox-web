@@ -30,8 +30,8 @@
         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <figure>
-          <img [src]="item.modal_image?.url" [alt]="item.modal_image?.alternativeText">
+        <figure *ngFor="let image of item.modal_image">
+          <img [src]="image.url" [alt]="image.alternativeText">
         </figure>
       </div>
       <div class="modal-footer">
