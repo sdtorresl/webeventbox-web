@@ -18,27 +18,26 @@
     </ngx-slick-carousel>
   </div>
 
-</section>
-
-<!-- Modal -->
-<div class="modal fade" [id]="'modal' + item.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-  *ngFor="let item of advantagesData?.Contenido">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ item.title }}</h5>
-        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <figure *ngFor="let image of item.modal_image">
-          <img [src]="image.url" [alt]="image.alternativeText">
-        </figure>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
-          Aceptar
-        </button>
+  <!-- Modal -->
+  <div class="modal fade" [id]="'modal' + item.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    *ngFor="let item of advantagesData?.Contenido">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ item.title }}</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <figure *ngFor="let image of item.modal_image">
+            <img [src]="image.url" [alt]="image.alternativeText">
+          </figure>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
+            Aceptar
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>

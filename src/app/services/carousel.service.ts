@@ -16,6 +16,7 @@ export class CarouselService {
 
     return this.http.get<Carousel>(endpoint).pipe(map(resp => {
       resp.slider_content?.forEach(content => {
+        content.desktop_large.url = config.baseUrl + content.desktop_large.url;
         content.desktop.url = config.baseUrl + content.desktop.url;
         content.mobile.url = config.baseUrl + content.mobile.url;
       });

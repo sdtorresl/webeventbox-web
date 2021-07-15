@@ -1,13 +1,15 @@
 <footer class="black text-white">
   <section class="container-fluid">
     <div class="row">
-      <div class="col-md-4 p-5 d-flex justify-content-end align-items-center">
-        <p>
-          Powered by
-          <a href="https://exeamedia.com" target="_blank">
-            <img src="assets/img/logo-exea.png" alt="">
-          </a>
-        </p>
+      <div class="col-md-4 p-5">
+        <aside class="d-flex justify-content-end align-items-center">
+          <p>
+            Powered by
+            <a href="https://exeamedia.com" target="_blank">
+              <img src="assets/img/logo-exea.png" alt="">
+            </a>
+          </p>
+        </aside>
       </div>
 
       <div class="col-md-8 gray p-5 container">
@@ -54,7 +56,7 @@
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>{{ termsData.description }}</p>
+          <markdown [data]='termsData.description'>{{ termsData.description }}</markdown>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
@@ -74,7 +76,7 @@
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>{{ policyData.description }}</p>
+          <markdown [data]='policyData.description'>{{ policyData.description }}</markdown>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">

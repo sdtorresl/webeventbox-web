@@ -1,17 +1,22 @@
 <!-- Carousel wrapper -->
-<div id="carousel-home" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+<section id="carousel-home" class="carousel slide carousel-fade" data-mdb-ride="carousel">
   <!-- Indicators -->
   <div class="carousel-indicators">
-    <button type="button" data-mdb-target="#carousel-home" *ngFor="let carousel of carouselData.slider_content; index as i" [ngClass]="{'active': i == 0}" [attr.aria-current]="i == 0 ? 'true' : null" [attr.data-mdb-slide-to]="i" [attr.aria-label]="'Slide ' + i"></button>
+    <button type="button" data-mdb-target="#carousel-home"
+      *ngFor="let carousel of carouselData.slider_content; index as i" [ngClass]="{'active': i == 0}"
+      [attr.aria-current]="i == 0 ? 'true' : null" [attr.data-mdb-slide-to]="i"
+      [attr.aria-label]="'Slide ' + i"></button>
   </div>
 
   <!-- Inner -->
   <div class="carousel-inner">
     <!-- Single item -->
-    <div >
-      <div class="carousel-item" *ngFor="let carousel of carouselData.slider_content; index as i" [ngClass]="{'active': i == 0}">
-        <img id="img-desktop" class="w-100" [src]="carousel.desktop.url" alt="">
-        <img id="img-mobile" class="w-100" [src]="carousel.mobile.url" alt="">
+    <div>
+      <div class="carousel-item" *ngFor="let carousel of carouselData.slider_content; index as i"
+        [ngClass]="{'active': i == 0}">
+        <img class="img-desktop-large w-100" [src]="carousel.desktop_large.url" alt="">
+        <img class="img-desktop w-100" [src]="carousel.desktop.url" alt="">
+        <img class="img-mobile w-100" [src]="carousel.mobile.url" alt="">
       </div>
     </div>
   </div>
@@ -26,5 +31,5 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
+</section>
 <!-- Carousel wrapper -->
