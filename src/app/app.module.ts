@@ -33,6 +33,7 @@ import { JourneyComponent } from './components/journey/journey.component';
   ],
   imports: [
     BrowserModule,
+    RecaptchaV3Module,
     AppRoutingModule,
     MdbModule,
     BrowserAnimationsModule,
@@ -42,7 +43,7 @@ import { JourneyComponent } from './components/journey/journey.component';
     ReactiveFormsModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
   ],
-  providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: "<YOUR_SITE_KEY>" }],
+  providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LcKEpcbAAAAAHJuWoU-hqXiOuvK8zYw_StBgihQ" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

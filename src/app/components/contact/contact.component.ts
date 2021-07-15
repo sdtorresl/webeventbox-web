@@ -1,7 +1,9 @@
 import { ContactUsService } from './../../services/contact-us.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { OnExecuteData, ReCaptchaV3Service } from 'ng-recaptcha';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,15 +11,25 @@ import Swal from 'sweetalert2';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
-
+export class ContactComponent implements OnInit, OnDestroy {
+  private subscription?: Subscription;
   contactForm?: FormGroup;
 
-  constructor(private fb: FormBuilder, private contactService: ContactUsService) {
+  constructor(private fb: FormBuilder, private contactService: ContactUsService, private recaptchaV3Service: ReCaptchaV3Service) {
     this.buildForm();
   }
 
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
   ngOnInit(): void {
+    this.subscription = this.recaptchaV3Service.onExecute
+      .subscribe((data: OnExecuteData) => {
+        //console.log('Data: ', data);
+      });
   }
 
   buildForm() {
@@ -27,6 +39,7 @@ export class ContactComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(15)]],
       company: ['', [Validators.required, Validators.minLength(3)]],
+      recaptcha: ['']
     });
   }
 
@@ -35,7 +48,6 @@ export class ContactComponent implements OnInit {
       const formData = this.contactForm.value;
       this.contactService.sendContact(formData).subscribe(
         resp => {
-          console.log(JSON.stringify(resp));
           Swal.fire({
             title: `Gracias por contactarnos, ${formData.name.split(' ')[0]}`,
             text: `Tu mensaje ha sido enviado`,
@@ -47,7 +59,6 @@ export class ContactComponent implements OnInit {
           });
         },
         error => {
-          console.log(JSON.stringify(error));
           Swal.fire({
             title: `Lo sentimos`,
             text: `Hubo un error al enviar tu mensaje, intenta nuevemente más tarde`,
@@ -60,15 +71,27 @@ export class ContactComponent implements OnInit {
   }
 
   validateForm() {
-    console.log(this.contactForm?.value);
 
-    if (this.contactForm?.invalid) {
-      return Object.values(this.contactForm.controls).forEach(control => {
-        control.markAllAsTouched();
+    this.recaptchaV3Service.execute('submit').subscribe((token) => {
+      this.contactForm?.patchValue({
+        recaptcha: token
       });
-    } else {
-      this.submit();
-    }
+
+      if (this.contactForm?.invalid) {
+        return Object.values(this.contactForm.controls).forEach(control => {
+          control.markAllAsTouched();
+        });
+      } else {
+        this.submit();
+      }
+    }, (error) => {
+      Swal.fire({
+        title: `Ups`,
+        text: `Al parecer se produjo un error al validar tu identidad`,
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    });
   }
 
   get invalidComment() {

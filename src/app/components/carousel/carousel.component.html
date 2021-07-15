@@ -14,9 +14,11 @@
     <div>
       <div class="carousel-item" *ngFor="let carousel of carouselData.slider_content; index as i"
         [ngClass]="{'active': i == 0}">
-        <img class="img-desktop-large w-100" [src]="carousel.desktop_large.url" alt="">
-        <img class="img-desktop w-100" [src]="carousel.desktop.url" alt="">
-        <img class="img-mobile w-100" [src]="carousel.mobile.url" alt="">
+        <a href="#intro">
+          <img class="img-desktop-large w-100" [src]="carousel.desktop_large.url" alt="">
+          <img class="img-desktop w-100" [src]="carousel.desktop.url" alt="">
+          <img class="img-mobile w-100" [src]="carousel.mobile.url" alt="">
+        </a>
       </div>
     </div>
   </div>
